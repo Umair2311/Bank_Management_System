@@ -1,6 +1,13 @@
+"use client"
 import React from "react";
+import { useRouter } from 'next/navigation';
 
 function SignUp() {
+  const router = useRouter()
+
+  function handleSignUp(){
+    router.push("signin")
+  }
   return (
     <section>
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 w-[350px] sm:w-[600px]">
@@ -27,7 +34,7 @@ function SignUp() {
               </div>
               <div>
                 <label
-                  for="email"
+                  htmlFor="email"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Your CNIC
@@ -43,7 +50,7 @@ function SignUp() {
               </div>
               <div>
                 <label
-                  for="password"
+                  htmlFor="password"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Password
@@ -59,7 +66,7 @@ function SignUp() {
               </div>
               <div>
                 <label
-                  for="confirm-password"
+                  htmlFor="confirm-password"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Confirm password
@@ -85,7 +92,7 @@ function SignUp() {
                 </div>
                 <div className="ml-3 text-sm">
                   <label
-                    for="terms"
+                    htmlFor="terms"
                     className="font-light text-gray-500 dark:text-gray-300"
                   >
                     I accept the{" "}
@@ -99,6 +106,7 @@ function SignUp() {
                 </div>
               </div>
               <button
+                onClick={handleSignUp}
                 type="submit"
                 className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
               >
@@ -107,7 +115,7 @@ function SignUp() {
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Already have an account?{" "}
                 <a
-                  href="#"
+                  href="signin"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Login here
