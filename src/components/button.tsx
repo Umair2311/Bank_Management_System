@@ -1,13 +1,13 @@
-import React from 'react'
 
 interface ButtonProps{
     text: string
+    onClick?: () => void
 }
 
 function button(props: ButtonProps) {
-  const {text} = props
+  const {text, onClick} = props
   return (
-    <button className='p-2 bg-cyan-600 rounded m-1 min-w-[100px]'>{text}</button>
+    <button onClick={() => onClick && onClick()} className='p-2 bg-cyan-600 rounded m-1 min-w-[100px]'>{text}</button>
   )
 }
 
